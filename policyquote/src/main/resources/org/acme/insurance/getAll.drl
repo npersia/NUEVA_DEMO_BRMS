@@ -1,6 +1,9 @@
 package org.acme.insurance;
 
 
+query "getRejection"
+    rejection: Rejection( );
+end
 
 query "getDriver"
     driver: Driver( );
@@ -10,6 +13,3 @@ query "getPolicy"
     policy: Policy( );
 end
 
-query "getRejection"
-    rejection: Rejection( );
-end
