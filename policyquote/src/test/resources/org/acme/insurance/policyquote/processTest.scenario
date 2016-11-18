@@ -11,24 +11,39 @@
           <value>15</value>
           <nature>4</nature>
         </field-data>
+        <field-data>
+          <name>numberOfAccidents</name>
+          <value>500</value>
+          <nature>4</nature>
+        </field-data>
       </fieldData>
       <name>$d1</name>
       <isModify>false</isModify>
     </fact-data>
-    <execution-trace/>
+    <org.drools.workbench.models.testscenarios.shared.ActivateRuleFlowGroup>
+      <name>rejection</name>
+    </org.drools.workbench.models.testscenarios.shared.ActivateRuleFlowGroup>
+    <execution-trace>
+      <executionTimeResult>79</executionTimeResult>
+      <numberOfRulesFired>1</numberOfRulesFired>
+    </execution-trace>
     <expect-fact>
       <fieldValues>
         <expect-field>
           <fieldName>reason</fieldName>
           <expected>asd</expected>
+          <actualResult>Too Young</actualResult>
+          <successResult>false</successResult>
+          <explanation>[Rejection] field [reason] was [Too Young] expected [asd].</explanation>
           <operator>==</operator>
-          <nature>0</nature>
+          <nature>1</nature>
         </expect-field>
       </fieldValues>
       <name>Rejection</name>
       <anonymous>true</anonymous>
     </expect-fact>
   </fixtures>
+  <lastRunResult>2016-11-18 17:12:44.100 UTC</lastRunResult>
   <rules/>
   <inclusive>false</inclusive>
   <packageName>org.acme.insurance.policyquote</packageName>
