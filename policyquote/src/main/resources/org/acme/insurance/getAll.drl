@@ -4,15 +4,14 @@ import org.acme.insurance.Driver;
 import org.acme.insurance.Policy;
 import org.acme.insurance.Rejection;
 
-
 query "getDriver"
     driver: Driver( );
-end;
+end
 
 query "getPolicy"
     policy: Policy( );
-end;
+end
 
 query "getRejection"
     rejection: Rejection( );
-end;
+end
