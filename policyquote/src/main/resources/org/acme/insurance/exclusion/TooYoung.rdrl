@@ -14,4 +14,5 @@ rule "TooYoung"
 		fact0.setReason( "Too Young" );
 		insert( fact0 );
 		System.out.println("fired rule " + kcontext.getRule().getName());
+		System.out.println(fact0.getReason());
 end
