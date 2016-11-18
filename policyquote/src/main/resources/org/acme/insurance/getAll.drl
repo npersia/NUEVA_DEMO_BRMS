@@ -1,8 +1,8 @@
 package org.acme.insurance;
 
-package org.acme.insurance.Driver;
-package org.acme.insurance.Policy;
-package org.acme.insurance.Rejection;
+import org.acme.insurance.Driver;
+import org.acme.insurance.Policy;
+import org.acme.insurance.Rejection;
 
 
 query "getDriver"
