@@ -1,2 +1,18 @@
 package org.acme.insurance;
 
+package org.acme.insurance.Driver;
+package org.acme.insurance.Policy;
+package org.acme.insurance.Rejection;
+
+
+query "getDriver"
+    driver: Driver( );
+end
+
+query "getPolicy"
+    policy: Policy( );
+end
+
+query "getRejection"
+    rejection: Rejection( );
+end
