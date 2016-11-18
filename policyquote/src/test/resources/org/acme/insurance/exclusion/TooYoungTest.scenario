@@ -15,12 +15,29 @@
       <name>$d1</name>
       <isModify>false</isModify>
     </fact-data>
-    <execution-trace/>
+    <fact-data>
+      <type>Driver</type>
+      <fieldData>
+        <field-data>
+          <name>age</name>
+          <value>25</value>
+          <nature>4</nature>
+        </field-data>
+      </fieldData>
+      <name>$d2</name>
+      <isModify>false</isModify>
+    </fact-data>
+    <execution-trace>
+      <executionTimeResult>105</executionTimeResult>
+      <numberOfRulesFired>1</numberOfRulesFired>
+    </execution-trace>
     <expect-fact>
       <fieldValues>
         <expect-field>
           <fieldName>reason</fieldName>
           <expected>Too Young</expected>
+          <successResult>true</successResult>
+          <explanation>[Rejection] field [reason] was [Too Young].</explanation>
           <operator>==</operator>
           <nature>1</nature>
         </expect-field>
@@ -30,9 +47,13 @@
     </expect-fact>
     <expect-rule>
       <ruleName>TooYoung</ruleName>
+      <explanation>Rule [TooYoung] was activated 1 times.</explanation>
       <expectedFire>true</expectedFire>
+      <successResult>true</successResult>
+      <actualResult>1</actualResult>
     </expect-rule>
   </fixtures>
+  <lastRunResult>2016-11-18 16:21:12.353 UTC</lastRunResult>
   <rules/>
   <inclusive>false</inclusive>
   <packageName>org.acme.insurance.exclusion</packageName>
