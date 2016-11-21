@@ -12,6 +12,7 @@ rule "AccidentSurcharge"
 		driver : Driver(numberOfAccidents > 2)
 		policy : Policy(policyType ==  "AUTO",priceSurcharge == null)
 		not Accident( )
+		not Rejection()
 	then
 		modify(policy) {priceSurcharge = 200}
 		System.out.println("fired rule " + kcontext.getRule().getName());
