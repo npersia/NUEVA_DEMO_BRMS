@@ -13,7 +13,6 @@ salience 100
 	    
     then
         //actions
-        modify(policy) {setPrice(450)};
         System.out.println("fired rule " + kcontext.getRule().getName());
         Rejection fact0 = new Rejection();
 		fact0.setReason( "Esto es una prueba" );
