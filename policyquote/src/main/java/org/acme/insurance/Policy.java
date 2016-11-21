@@ -10,18 +10,21 @@ public class Policy implements java.io.Serializable
 
    static final long serialVersionUID = 1L;
 
-   @org.kie.api.definition.type.Label(value = "Request Date")
+   @org.kie.api.definition.type.Label("Request Date")
    private java.util.Date requestDate;
-   @org.kie.api.definition.type.Label(value = "Policy Type")
+   @org.kie.api.definition.type.Label("Policy Type")
    private java.lang.String policyType;
-   @org.kie.api.definition.type.Label(value = "Vehicle Year")
+   @org.kie.api.definition.type.Label("Vehicle Year")
    private java.lang.Integer vehicleYear;
-   @org.kie.api.definition.type.Label(value = "Price")
+   @org.kie.api.definition.type.Label("Price")
    private java.lang.Integer price;
-   @org.kie.api.definition.type.Label(value = "Price Discount")
+   @org.kie.api.definition.type.Label("Price Discount")
    private java.lang.Integer priceDiscount;
-   @org.kie.api.definition.type.Label(value = "Driver")
+   @org.kie.api.definition.type.Label("Driver")
    private org.acme.insurance.Driver driver;
+
+   @org.kie.api.definition.type.Label(value = "Surcharge")
+   private java.lang.Integer surcharge;
 
    public Policy()
    {
@@ -87,9 +90,32 @@ public class Policy implements java.io.Serializable
       this.driver = driver;
    }
 
+   public String toString()
+   {
+      StringBuilder sBuilder = new StringBuilder("Policy =");
+      sBuilder.append("\n\tpolicyType : " + policyType);
+      sBuilder.append("\n\tprice : " + price);
+      sBuilder.append("\n\tpriceDiscount : " + priceDiscount);
+      sBuilder.append("\n\trequestDate : " + requestDate);
+      sBuilder.append("\n\tvehicle year : " + vehicleYear);
+      sBuilder.append("\n\tdriver : " + driver);
+      return sBuilder.toString();
+   }
+
+   public java.lang.Integer getSurcharge()
+   {
+      return this.surcharge;
+   }
+
+   public void setSurcharge(java.lang.Integer surcharge)
+   {
+      this.surcharge = surcharge;
+   }
+
    public Policy(java.util.Date requestDate, java.lang.String policyType,
          java.lang.Integer vehicleYear, java.lang.Integer price,
-         java.lang.Integer priceDiscount, org.acme.insurance.Driver driver)
+         java.lang.Integer priceDiscount, org.acme.insurance.Driver driver,
+         java.lang.Integer surcharge)
    {
       this.requestDate = requestDate;
       this.policyType = policyType;
@@ -97,18 +123,7 @@ public class Policy implements java.io.Serializable
       this.price = price;
       this.priceDiscount = priceDiscount;
       this.driver = driver;
+      this.surcharge = surcharge;
    }
-   
-   
-    public String toString() {
-        StringBuilder sBuilder = new StringBuilder("Policy =");
-        sBuilder.append("\n\tpolicyType : " +policyType);
-        sBuilder.append("\n\tprice : " +price);
-        sBuilder.append("\n\tpriceDiscount : " +priceDiscount);
-        sBuilder.append("\n\trequestDate : " +requestDate);
-        sBuilder.append("\n\tvehicle year : "+vehicleYear);
-        sBuilder.append("\n\tdriver : " +driver);
-        return sBuilder.toString();
-    }
 
 }
