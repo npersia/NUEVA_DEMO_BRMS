@@ -11,6 +11,7 @@ rule "NewerVehicleSurcharge"
 	when
 		policy : Policy(vehicleYear > 2004, policyType ==  "AUTO",priceSurcharge == null)
 		not NewerCar()
+		not Rejection()
 	then
 		modify(policy) {priceSurcharge = 100}
 		System.out.println("fired rule " + kcontext.getRule().getName());
