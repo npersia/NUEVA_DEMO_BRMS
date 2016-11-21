@@ -29,6 +29,7 @@ rule "NoviceDriverSurcharge2"
 		driver : Driver(age < 20)
 		policy : Policy(priceSurcharge > 0,policyType ==  "AUTO")
 		not NoviceDriver( )
+		not Rejection()
 	then
 		modify(policy) {priceSurcharge = 200 + policy.priceSurcharge}
 		 System.out.println("fired rule " + kcontext.getRule().getName());
