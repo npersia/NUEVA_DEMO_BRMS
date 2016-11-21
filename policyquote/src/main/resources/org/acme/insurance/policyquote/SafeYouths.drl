@@ -5,6 +5,7 @@ import org.acme.insurance.Driver
 import org.acme.insurance.Policy
 
 rule "SafeYouths"
+salience 1000
 //ruleflow-group "calculate"
     when
         //conditions
