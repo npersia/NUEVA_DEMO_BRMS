@@ -15,6 +15,8 @@ rule "AccidentSurcharge"
 		modify(policy) {priceSurcharge = 200}
 		System.out.println("fired rule " + kcontext.getRule().getName());
 		update(policy)
+		Accident fact0 = new Accident();
+		insert( fact0 );
 end
 
 rule "AccidentSurcharge2"
@@ -29,4 +31,6 @@ rule "AccidentSurcharge2"
 		modify(policy) {priceSurcharge = 200 + policy.priceSurcharge}
 		update(policy)
 		System.out.println("fired rule " + kcontext.getRule().getName());
+		Accident fact0 = new Accident();
+		insert( fact0 );
 end
