@@ -17,6 +17,8 @@ rule "NoviceDriverSurcharge"
 		modify(policy) {priceSurcharge = 200}
 		 System.out.println("fired rule " + kcontext.getRule().getName());
 		 update(policy)
+		NoviceDriver fact0 = new NoviceDriver();
+		insert( fact0 );
 end
 
 rule "NoviceDriverSurcharge2"
@@ -31,4 +33,6 @@ rule "NoviceDriverSurcharge2"
 		modify(policy) {priceSurcharge = 200 + policy.priceSurcharge}
 		 System.out.println("fired rule " + kcontext.getRule().getName());
 		 update(policy)
+		 NoviceDriver fact0 = new NoviceDriver();
+		insert( fact0 );
 end
