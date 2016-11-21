@@ -9,7 +9,6 @@ rule "NewerVehicleSurcharge"
 	when
 		There is a Policy
 		- vehicle year is greater than 2004
-		- price is greater than 0
 		- policy type is 'AUTO'
 	then
 		Add surcharge 100 to Policy
