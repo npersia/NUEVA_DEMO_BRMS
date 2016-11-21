@@ -6,6 +6,7 @@ import org.acme.insurance.Rejection;
 
 rule "TooOld"
 	dialect "mvel"
+	salience 10000
 	when
 		Driver( age > 100 )
 	then
