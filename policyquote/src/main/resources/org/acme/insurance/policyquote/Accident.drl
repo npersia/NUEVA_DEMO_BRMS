@@ -27,6 +27,7 @@ rule "AccidentSurcharge2"
 		driver : Driver(numberOfAccidents > 2)
 		policy : Policy(policyType ==  "AUTO",priceSurcharge > 0)
 		not Accident( )
+		not Rejection()
 	then
 		modify(policy) {priceSurcharge = 200 + policy.priceSurcharge}
 		update(policy)
