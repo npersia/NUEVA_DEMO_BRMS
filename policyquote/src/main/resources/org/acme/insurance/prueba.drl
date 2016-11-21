@@ -1,2 +1,23 @@
 package org.acme.insurance;
 
+import org.acme.insurance.Driver
+import org.acme.insurance.Policy
+import org.acme.insurance.Rejection
+
+
+rule "prueba"
+    when
+        //conditions
+        driver : Driver(age >= 18 && < 25, numberOfAccidents < 1, numberOfTickets <= 1)
+	    policy : Policy(price == null, policyType == "AUTO")
+    then
+        //actions
+        modify(policy) {setPrice(450)};
+        System.out.println("fired rule " + kcontext.getRule().getName());
+        Rejection fact0 = new Rejection();
+		fact0.setReason( "Esto es una prueba" );
+		insert( fact0 );
+		System.out.println("fired rule " + kcontext.getRule().getName());
+		System.out.println(fact0.getReason());
+
+end
