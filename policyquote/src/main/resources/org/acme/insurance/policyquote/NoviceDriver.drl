@@ -6,6 +6,7 @@ import org.acme.insurance.NoviceDriver
 
 
 rule "NoviceDriverSurcharge"
+    salience 1000
 	dialect "mvel"
 	//lock-on-active true
 	no-loop true
@@ -22,6 +23,7 @@ rule "NoviceDriverSurcharge"
 end
 
 rule "NoviceDriverSurcharge2"
+    salience 1000
 	dialect "mvel"
 	//lock-on-active true
 	no-loop true
