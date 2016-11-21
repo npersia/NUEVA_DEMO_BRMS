@@ -23,8 +23,8 @@ public class Policy implements java.io.Serializable
    @org.kie.api.definition.type.Label("Driver")
    private org.acme.insurance.Driver driver;
 
-   @org.kie.api.definition.type.Label(value = "Surcharge")
-   private java.lang.Integer surcharge;
+   @org.kie.api.definition.type.Label(value = "Price Surcharge")
+   private java.lang.Integer priceSurcharge;
 
    public Policy()
    {
@@ -102,20 +102,20 @@ public class Policy implements java.io.Serializable
       return sBuilder.toString();
    }
 
-   public java.lang.Integer getSurcharge()
+   public java.lang.Integer getPriceSurcharge()
    {
-      return this.surcharge;
+      return this.priceSurcharge;
    }
 
-   public void setSurcharge(java.lang.Integer surcharge)
+   public void setPriceSurcharge(java.lang.Integer priceSurcharge)
    {
-      this.surcharge = surcharge;
+      this.priceSurcharge = priceSurcharge;
    }
 
    public Policy(java.util.Date requestDate, java.lang.String policyType,
          java.lang.Integer vehicleYear, java.lang.Integer price,
          java.lang.Integer priceDiscount, org.acme.insurance.Driver driver,
-         java.lang.Integer surcharge)
+         java.lang.Integer priceSurcharge)
    {
       this.requestDate = requestDate;
       this.policyType = policyType;
@@ -123,7 +123,7 @@ public class Policy implements java.io.Serializable
       this.price = price;
       this.priceDiscount = priceDiscount;
       this.driver = driver;
-      this.surcharge = surcharge;
+      this.priceSurcharge = priceSurcharge;
    }
 
 }
