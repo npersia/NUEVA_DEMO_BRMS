@@ -15,4 +15,5 @@ rule "NoviceDriverSurcharge"
 		- policy type is 'AUTO'
 	then
 		Add surcharge 200 to Policy
+		>System.out.println("fired rule " + kcontext.getRule().getName());
 end
