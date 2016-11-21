@@ -10,6 +10,7 @@ rule "NewerVehicleSurcharge"
 		policy : Policy(vehicleYear > 2004, policyType ==  "AUTO",priceSurcharge == null)
 	then
 		modify(policy) {priceSurcharge = 100}
+		System.out.println("fired rule " + kcontext.getRule().getName());
 end
 
 
@@ -21,4 +22,5 @@ rule "NewerVehicleSurcharge2"
 		policy : Policy(vehicleYear > 2004, policyType ==  "AUTO",priceSurcharge > 0)
 	then
 		modify(policy) {priceSurcharge = 100 + policy.priceSurcharge}
+		System.out.println("fired rule " + kcontext.getRule().getName());
 end
