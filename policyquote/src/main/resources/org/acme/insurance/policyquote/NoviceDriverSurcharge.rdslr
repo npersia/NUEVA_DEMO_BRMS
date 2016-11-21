@@ -6,7 +6,6 @@ rule "NoviceDriverSurcharge"
 	dialect "mvel"
 	lock-on-active true
 	no-loop true
-	ruleflow-group "surcharge"
 	when
 		There is a Driver
 		- age less than 20 years old
