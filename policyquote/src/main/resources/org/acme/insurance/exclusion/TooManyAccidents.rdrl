@@ -6,6 +6,7 @@ import org.acme.insurance.Rejection;
 
 rule "TooManyAccidents"
 	dialect "mvel"
+	salience 10000
 	when
 		Driver( numberOfAccidents > 4 )
 	then
