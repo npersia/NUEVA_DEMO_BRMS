@@ -1,2 +1,24 @@
 package org.acme.insurance.policyquote;
 
+import java.lang.Number;
+
+rule "NewerVehicleSurcharge"
+	dialect "mvel"
+	no-loop true
+	lock-on-active true
+	when
+		policy : Policy(vehicleYear > 2004, policyType ==  "AUTO",priceSurcharge == null)
+	then
+		modify(policy) {priceSurcharge = 100}
+end
+
+
+rule "NewerVehicleSurcharge2"
+	dialect "mvel"
+	no-loop true
+	lock-on-active true
+	when
+		policy : Policy(vehicleYear > 2004, policyType ==  "AUTO",priceSurcharge > 0)
+	then
+		modify(policy) {priceSurcharge = 100 + policy.priceSurcharge}
+end
