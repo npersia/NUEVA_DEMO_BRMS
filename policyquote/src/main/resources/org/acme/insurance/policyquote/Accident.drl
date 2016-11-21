@@ -4,6 +4,7 @@ import java.lang.Number;
 import org.acme.insurance.Accident
 
 rule "AccidentSurcharge"
+    salience 1000
 	dialect "mvel"
 	no-loop true
 	//lock-on-active true
