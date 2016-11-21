@@ -16,6 +16,6 @@
 [consequence][]Reject Policy with explanation : '{reason}'=insert(new Rejection("{reason}"));
 [condition][]Policy has not been rejected=not Rejection()
 [consequence][]logRule=System.out.println("the rule that executed is: " + drools.getRule());
-[consequence][policy]Add surcharge {surcharge} to Policy=modify(policy) \{priceSurcharge = policy.price + {surcharge}\}
+[consequence][policy]Add surcharge {surcharge} to Policy=modify(policy) \{priceSurcharge = {surcharge}\}
 [condition][]Sum all policies for the same driver=Number( total : intValue > 0) from accumulate( Policy( policyType != "MASTER",     priceVar : price > 0, driver == driver), sum( priceVar ) )
 [consequence][]Set policy total=modify (policy) {setPrice(total)}
