@@ -1,13 +1,15 @@
 package org.acme.insurance.policyquote;
 
 import java.lang.Number;
+import org.acme.insurance.NewerCar
 
 rule "NewerVehicleSurcharge"
 	dialect "mvel"
 	no-loop true
-	lock-on-active true
+	//lock-on-active true
 	when
 		policy : Policy(vehicleYear > 2004, policyType ==  "AUTO",priceSurcharge == null)
+		not NewerCar()
 	then
 		modify(policy) {priceSurcharge = 100}
 		System.out.println("fired rule " + kcontext.getRule().getName());
@@ -18,9 +20,10 @@ end
 rule "NewerVehicleSurcharge2"
 	dialect "mvel"
 	no-loop true
-	lock-on-active true
+	//lock-on-active true
 	when
 		policy : Policy(vehicleYear > 2004, policyType ==  "AUTO",priceSurcharge > 0)
+		not NewerCar()
 	then
 		modify(policy) {priceSurcharge = 100 + policy.priceSurcharge}
 		System.out.println("fired rule " + kcontext.getRule().getName());
