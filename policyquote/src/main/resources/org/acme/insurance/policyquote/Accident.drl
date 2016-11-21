@@ -21,6 +21,7 @@ rule "AccidentSurcharge"
 end
 
 rule "AccidentSurcharge2"
+    salience 1000
 	dialect "mvel"
 	no-loop true
 	//lock-on-active true
