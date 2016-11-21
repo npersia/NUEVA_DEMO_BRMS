@@ -13,13 +13,8 @@ salience 2000000
 	    policy : Policy(price == null, policyType == "AUTO")
     then
         //actions
-        modify(policy) {setPrice(450)};
         System.out.println("fired rule " + kcontext.getRule().getName());
-        Rejection fact0 = new Rejection();
-		fact0.setReason( "Esto es una prueba2" );
-		insert( fact0 );
-		System.out.println("fired rule " + kcontext.getRule().getName());
-		System.out.println(fact0.getReason());
+        
 		
 
 end
