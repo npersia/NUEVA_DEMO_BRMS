@@ -7,7 +7,7 @@ import org.acme.insurance.NoviceDriver
 
 rule "NoviceDriverSurcharge"
 	dialect "mvel"
-	lock-on-active true
+	//lock-on-active true
 	no-loop true
 	when
 		driver : Driver(age < 20)
@@ -21,7 +21,7 @@ end
 
 rule "NoviceDriverSurcharge2"
 	dialect "mvel"
-	lock-on-active true
+	//lock-on-active true
 	no-loop true
 	when
 		driver : Driver(age < 20)
