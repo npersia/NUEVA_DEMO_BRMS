@@ -5,6 +5,7 @@ import org.acme.insurance.Policy
 import org.acme.insurance.Rejection
 
 rule "RiskyYouths"
+salience 1000
 //ruleflow-group "calculate"
     when
         //conditions
