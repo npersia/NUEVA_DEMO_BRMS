@@ -4,6 +4,7 @@ import java.lang.Number;
 import org.acme.insurance.NewerCar
 
 rule "NewerVehicleSurcharge"
+    salience 1000
 	dialect "mvel"
 	no-loop true
 	//lock-on-active true
@@ -20,6 +21,7 @@ end
 
 
 rule "NewerVehicleSurcharge2"
+    salience 1000
 	dialect "mvel"
 	no-loop true
 	//lock-on-active true
