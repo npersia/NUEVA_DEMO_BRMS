@@ -1,2 +1,27 @@
 package org.acme.insurance.policyquote;
 
+import java.lang.Number;
+
+rule "NoviceDriverSurcharge"
+	dialect "mvel"
+	lock-on-active true
+	no-loop true
+	when
+		driver : Driver(age < 20)
+		policy : Policy(priceSurcharge == null,policyType ==  "AUTO")
+	then
+		modify(policy) {priceSurcharge = 200}
+		 System.out.println("fired rule " + kcontext.getRule().getName());
+end
+
+rule "NoviceDriverSurcharge2"
+	dialect "mvel"
+	lock-on-active true
+	no-loop true
+	when
+		driver : Driver(age < 20)
+		policy : Policy(priceSurcharge > 0,policyType ==  "AUTO")
+	then
+		modify(policy) {priceSurcharge = 200 + policy.priceSurcharge}
+		 System.out.println("fired rule " + kcontext.getRule().getName());
+end
