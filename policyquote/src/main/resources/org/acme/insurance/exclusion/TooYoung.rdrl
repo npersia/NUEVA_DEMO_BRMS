@@ -6,8 +6,6 @@ import org.acme.insurance.Rejection;
 
 rule "TooYoung"
 	dialect "mvel"
-	ruleflow-group "rejection"
-	salience 1000
 	when
 		Driver( age < 18 )
 	then
@@ -15,6 +13,4 @@ rule "TooYoung"
 		fact0.setReason( "Too Young" );
 		insert( fact0 );
 		System.out.println("fired rule " + kcontext.getRule().getName());
-		System.out.println(fact0.getReason());
-		update(fact0);
 end
